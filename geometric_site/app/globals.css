@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -17,11 +23,24 @@
 }
 
 body {
+  min-height: 100vh;
+  padding: 2rem;
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background-color: black;
+}
+
+body:before {
+  content: ' ';
+  display: block;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: -999;
+  width: 100vw;
+  height: 100vh;
+  opacity: 0.25;
+  background-image: url('https://images.squarespace-cdn.com/content/v1/6295c3471d67ad0205500ef1/9e268b5a-3e79-40ff-a3ec-8035636e9a05/1.png');
+  background-repeat: no-repeat;
+  background-position: 50% 0;
+  background-size: cover;
 }
